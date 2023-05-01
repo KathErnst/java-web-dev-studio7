@@ -1,10 +1,25 @@
 package org.launchcode.studio7;
 
-public class CD {
+public class CD extends BaseDisc {
 
-    // TODO: Implement your custom interface.
+        String dataCapacity = "700 MB";
+        Integer speedRPM = 400;
+    public CD(String title, String author, String discType) {
+        super(title, author, discType);
+    }
 
-    // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
-    //  need to be declared separately.
+    @Override
+    public void spin() {
+        System.out.println(getTitle() + " is spinning at " + speedRPM + " RPM.");
+    }
 
+    @Override
+    public void writeData() {
+        System.out.println("Writing new song on " + getDiscType() + "...");
+    }
+
+    @Override
+    public void readData() {
+        System.out.println(getAuthor() + " PLAYING!");
+    }
 }
